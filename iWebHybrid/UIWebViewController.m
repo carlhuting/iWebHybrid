@@ -3,7 +3,7 @@
 //  iWebHybrid
 //
 //  Created by lkeg on 16/9/2.
-//  Copyright © 2016年 com.baidu.muzhi. All rights reserved.
+//  Copyright © 2016年 com.lemontree.muzhi. All rights reserved.
 //
 
 #import "UIWebViewController.h"
@@ -13,7 +13,7 @@
 
 @interface UIWebViewController () <UIWebViewDelegate>
 @property (nonatomic, strong) JSContext *jsctx;
-@property (strong, nonatomic)  UIWebView *webView;
+@property (nonatomic, strong)  UIWebView *webView;
 @end
 
 @implementation UIWebViewController

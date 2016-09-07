@@ -3,7 +3,7 @@
 //  Communication
 //
 //  Created by lkeg on 16/9/4.
-//  Copyright © 2016年 com.baidu.muzhi. All rights reserved.
+//  Copyright © 2016年 com.lemontree.muzhi. All rights reserved.
 //
 
 #import "WKWebViewController.h"
@@ -103,7 +103,6 @@
 
 // 注册 -  解析
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
-    
     if ([message.name isEqualToString:@"objcsendMsg"]) {
         NSLog(@"objcsendMsg %@", message.body);
     }
@@ -112,16 +111,6 @@
         NSLog(@"nslog %@", message.body);
     }
     
-
 }
-
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-
 
 @end

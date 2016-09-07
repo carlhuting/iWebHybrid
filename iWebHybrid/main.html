@@ -15,7 +15,7 @@
         }
         
         function btnClick() {
-            location.href = "share://call?content=中国历史&&image=hello world&&destion=http://www.baidu.com";
+            location.href = "iWebHybrid://call?content=中国历史&&image=hello world&&destion=http://www.lemontree.com";
         }
         </script>
       
@@ -40,9 +40,9 @@
     <div class="row"><!-- url -->
         <p>通过拦截URL请求，Native进行解析，识别Action</p>
         <ul>
-            <li><a href="https://www.baidu.com"> baidu</button></a>
+            <li><a href="https://www.baidu.com"> lemontree</button></a>
             <li><button onclick="btnClick()" class="btn btn-default"> 分享到微信</button></li>
-            <li><button onclick="loadURL('share://call?content=hello world')">iOS</button></li>
+            <li><button onclick="loadURL('iWebHybrid://call?content=hello world')">iOS</button></li>
         </ul>
     </div>
     
