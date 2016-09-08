@@ -3,7 +3,7 @@
 //  Communication
 //
 //  Created by lkeg on 16/9/4.
-//  Copyright © 2016年 com.lemontree.muzhi. All rights reserved.
+//  Copyright © 2016年 com.lemontree.iWebHybrid. All rights reserved.
 //
 
 #import "WKWebViewController.h"
@@ -23,7 +23,8 @@
     self.webView.frame = self.view.frame;
     
     NSURL *url = [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"html"];
-    [self.webView loadFileURL:url allowingReadAccessToURL:url];
+    NSString *html = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil];
+    [self.webView loadHTMLString:html baseURL:nil];
     
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"..." style:UIBarButtonItemStylePlain target:self action:@selector(itemtapped:)];
     
@@ -55,6 +56,7 @@
         decisionHandler(WKNavigationActionPolicyAllow);
     }
 }
+
 
 - (WKWebView *)webView {
     if(!_webView) {

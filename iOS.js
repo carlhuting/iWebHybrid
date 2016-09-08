@@ -24,6 +24,23 @@ function loadURL(url) {
     iFrame = null;
 }
 
+/*
+ * { 
+ *  title: text
+ *  desc: text
+ *  thumb: text
+ *  url: text
+ * }
+ */
+function shareSocial(msg) {
+    var json = JSON.stringify(msg);
+    loadURL("iwebhybrid://com.iwebhybirid.share?" + json);
+}
+
+function nslog(msg) {
+    loadURL("iwebhybrid://com.iwebhybirid.log?" + msg);
+}
+                        
 function objc_sendMsg(argv) {
     window.webkit.messageHandlers.objcsendMsg.postMessage(argv);
 }

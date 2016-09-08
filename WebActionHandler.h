@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-static 
 
 @interface WebActionHandler : NSObject
+@property (nonatomic, assign) BOOL enableLog;
 + (instancetype)shareHandler;
 - (BOOL)handleURL:(NSURL *)url;
 @end

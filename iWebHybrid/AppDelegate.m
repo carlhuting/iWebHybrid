@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "WXApiManager.h"
 
 @interface AppDelegate ()
 
@@ -17,7 +18,23 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [WXApi registerApp:@"wxd930ea5d5a258f4f" withDescription:@"分享"];
     return YES;
+}
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    return [WXApi handleOpenURL:url delegate:[WXApiManager sharedManager]];
+    return NO;
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    return [WXApi handleOpenURL:url delegate:[WXApiManager sharedManager]];
+    return NO;
+}
+
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options {
+    return [WXApi handleOpenURL:url delegate:[WXApiManager sharedManager]];
+    return NO;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
